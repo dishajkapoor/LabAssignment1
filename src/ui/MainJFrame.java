@@ -4,16 +4,17 @@
  */
 package ui;
 
+import model.User;
+
 /**
  *
  * @author DKapoor
  */
 public class MainJFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainJFrame
-     */
+    User user;
     public MainJFrame() {
+        user = new User();
         initComponents();
     }
 
@@ -117,13 +118,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreateButtonActionPerformed
         // TODO add your handling code here:
-        CreateJPanel createJPanel = new CreateJPanel();
+        CreateJPanel createJPanel = new CreateJPanel(user);
         jSplitPanel.setRightComponent(createJPanel);
     }//GEN-LAST:event_jCreateButtonActionPerformed
 
     private void jViewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jViewButtonActionPerformed
         // TODO add your handling code here:
-        ViewJPanel viewJPanel = new ViewJPanel();
+        ViewJPanel viewJPanel = new ViewJPanel(user);
         jSplitPanel.setRightComponent(viewJPanel);
     }//GEN-LAST:event_jViewButtonActionPerformed
 
