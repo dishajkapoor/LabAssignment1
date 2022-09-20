@@ -77,6 +77,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPanel.setLeftComponent(jLeftPanel);
 
+        jRightPanel.setPreferredSize(new java.awt.Dimension(755, 600));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User Registration");

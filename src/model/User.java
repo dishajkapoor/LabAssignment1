@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.awt.Image;
+
 /**
  *
  * @author DKapoor
@@ -28,7 +30,7 @@ public class User {
     private String degree2;
     private String degree2Start;
     private String degree2End;
-    
+    private Image img;
 
     public String getFirstName() {
         return firstName;
@@ -181,5 +183,15 @@ public class User {
     public void setDegree2End(String degree2End) {
         this.degree2End = degree2End;
     }
+
+    public Image getImg() {
+        return img;
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
+    }
+    
+    
     
 }
