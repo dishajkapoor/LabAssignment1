@@ -4,8 +4,6 @@
  */
 package ui;
 
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import model.User;
@@ -27,11 +25,11 @@ public class ViewJPanel extends javax.swing.JPanel {
     }
     
     public void displayUser(){
-        if (user.getImg() == null){
+        if (user.getPhoto() == null){
             JOptionPane.showMessageDialog(this, "Photo is compulsory.");
         }
         else{
-            ViewPhotoLabel.setIcon(new ImageIcon(user.getImg()));
+            ViewPhotoLabel.setIcon(new ImageIcon(user.getPhoto()));
         }
         FirstNameTextField.setText(user.getFirstName());
         LastNameTextField.setText(user.getLastName());

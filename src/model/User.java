@@ -30,7 +30,7 @@ public class User {
     private String degree2;
     private String degree2Start;
     private String degree2End;
-    private Image img;
+    private Image photo;
 
     public String getFirstName() {
         return firstName;
@@ -184,12 +184,12 @@ public class User {
         this.degree2End = degree2End;
     }
 
-    public Image getImg() {
-        return img;
+    public Image getPhoto() {
+        return photo;
     }
 
-    public void setImg(Image img) {
-        this.img = img;
+    public void setPhoto(Image img) {
+        this.photo = img;
     }
     
     

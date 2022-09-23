@@ -4,15 +4,11 @@
  */
 package ui;
 
-import java.awt.Container;
-import java.awt.Dimension;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model.User;
 
@@ -80,7 +76,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         Degree1EndTextField = new javax.swing.JTextField();
         Degree2TextField = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        SaveButton = new javax.swing.JButton();
         AffiliationTextField = new javax.swing.JTextField();
         UploadButton = new javax.swing.JButton();
         PhotoLabel = new javax.swing.JLabel();
@@ -162,10 +158,10 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         jLabel12.setText("Affiliation");
 
-        jButton1.setText("Save");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        SaveButton.setText("Save");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SaveButtonActionPerformed(evt);
             }
         });
 
@@ -254,7 +250,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                                     .addComponent(Degree2EndTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(PhotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(SaveButton)
                                 .addGap(75, 75, 75))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -339,7 +335,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                             .addComponent(CareerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(PhotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(SaveButton)
                 .addContainerGap(88, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -364,9 +360,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_FirstNameTextFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
         // TODO add your handling code here:
-        if (user.getImg() == null){
+        if (user.getPhoto() == null){
             JOptionPane.showMessageDialog(this, "Photo is compulsory.");
         }
         else{
@@ -392,7 +388,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         JOptionPane.showMessageDialog(this, "Data is saved");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void UploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadButtonActionPerformed
         // TODO add your handling code here:
@@ -403,8 +399,8 @@ public class CreateJPanel extends javax.swing.JPanel {
             File file = img_upload.getSelectedFile();
             
             try {
-                user.setImg(ImageIO.read(file).getScaledInstance(65, 105, 65));
-                PhotoLabel.setIcon(new ImageIcon(user.getImg()));
+                user.setPhoto(ImageIO.read(file).getScaledInstance(65, 105, 65));
+                PhotoLabel.setIcon(new ImageIcon(user.getPhoto()));
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(this, "Error while saving image.");
             }
@@ -433,11 +429,11 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField LastNameTextField;
     private javax.swing.JTextField MajorTextField;
     private javax.swing.JLabel PhotoLabel;
+    private javax.swing.JButton SaveButton;
     private javax.swing.JTextField StreetLine1TextField;
     private javax.swing.JTextField StreetLine2TextField;
     private javax.swing.JTextField TelephoneNumberTextField;
     private javax.swing.JButton UploadButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
